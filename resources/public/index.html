@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        html {
+          background: url(img/bg2.jpg) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          font-family: Georgia,Serif;
+        }
+
+        .label {
+            color: white;
+            font-size: 16px;
+            margin-left: 10px;
+            padding-bottom: 10px;
+            padding-top:30px;
+        }
+
+        textarea {
+            border-radius:5px;
+            resize: none;
+            border-color:white;
+            width:700px;
+            font-family: Tahoma, sans-serif;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Simple CLJS</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- pointing to cljsbuild generated js file -->
+    <script src="js/ente.js"></script>
+    <script src="js/jquery.js"></script>
+    <div style="width: 700px ; margin-left: auto ;margin-right: auto ;">
+       <div>
+           <div class="label">Menschlich</div>
+             <textarea id="text1" name="text" cols="35" rows="4" onKeyUp="text1change(this.value);"></textarea>
+
+       </div>
+       <div>
+           <div class="label">Entisch</div>
+             <textarea id="text2" name="text" cols="35" rows="4" onKeyUp="text2change(this.value);"></textarea>
+
+       </div>
+    </div>
+   <script>
+        function text1change(val)  {
+             $('#text2').val(ente.translate(val))
+        }
+
+        function text2change(val)  {
+             $('#text1').val(ente.detranslate(val))
+        }
+   </script>
+</html>
