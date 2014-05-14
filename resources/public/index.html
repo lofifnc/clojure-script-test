@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <style>
         html {
           background: url(img/bg2.jpg) no-repeat center center fixed;
@@ -8,27 +9,52 @@
           -moz-background-size: cover;
           -o-background-size: cover;
           background-size: cover;
-          font-family: Georgia,Serif;
+          font-family: "Open Sans",Helvetica,Arial,Verdana,sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
 
         .label {
-            color: white;
-            font-size: 16px;
+            font-size: 24px;
             margin-left: 10px;
-            padding-bottom: 10px;
+            padding-bottom: 6px;
             padding-top:30px;
+
+            letter-spacing: -.006em;
+            color: rgba(255,255,255,0.8);
         }
 
         textarea {
-            border-radius:5px;
+            border-radius:8px;
             resize: none;
             border-color:white;
             width:700px;
+            height:120px;
             font-family: Tahoma, sans-serif;
+            font-size:16px;
+            opacity: .83;
+            padding:10px;
         }
+
+        #footer {
+            text-align: center ;
+            font-family: Tahoma, sans-serif;
+            font-size:12px;
+            padding-top:20px;
+        }
+
+        textarea:focus {
+            outline:none;
+            box-shadow:none
+        }
+
+        a:link {color:#FFF;text-decoration:none;}      /* unvisited link */
+        a:visited {color:#FFF;text-decoration:none;}  /* visited link */
+        a:hover {color:#FFF;text-decoration:none;}  /* mouse over link */
+        a:active {color:#FFF;text-decoration:none;}
     </style>
     <meta charset="utf-8">
-    <title>Simple CLJS</title>
+    <title>ducktrans</title>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -39,15 +65,20 @@
     <script src="js/jquery.js"></script>
     <div style="width: 700px ; margin-left: auto ;margin-right: auto ;">
        <div>
-           <div class="label">Menschlich</div>
+           <div class="label">human</div>
              <textarea id="text1" name="text" cols="35" rows="4" onKeyUp="text1change(this.value);"></textarea>
 
        </div>
        <div>
-           <div class="label">Entisch</div>
+           <div class="label">duck</div>
              <textarea id="text2" name="text" cols="35" rows="4" onKeyUp="text2change(this.value);"></textarea>
 
        </div>
+       <div id="footer">
+           <a href="https://github.com/lofifnc/enten-sprache/blob/master/src/cljs/enten-sprache/ente.cljs">
+               view source on github
+           </a>
+        </div>
     </div>
    <script>
         function text1change(val)  {
